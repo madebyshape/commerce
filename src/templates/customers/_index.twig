@@ -29,16 +29,18 @@ var columns = [
         }
 
         var title = Craft.escapeHtml(value.title);
-        var $html = '';
+        var $html = '<div class="element small ' + (value.status ? 'hasstatus' : '') + '">';
         if (value.status) {
             $html = $html + '<span class="status '+value.status+'"></span>';
         }
 
         if (value.url) {
-            $html = $html + '<a class="cell-bold" href="'+value.url+'">'+title+'</a>';
+            $html = $html + '<a href="'+value.url+'">'+title+'</a>';
         } else {
-            $html = $html + '<span class="cell-bold">'+title+'</span>';
+            $html = $html + '<span>'+title+'</span>';
         }
+
+        $html = $html + '</div>';
 
         return $html;
     } }

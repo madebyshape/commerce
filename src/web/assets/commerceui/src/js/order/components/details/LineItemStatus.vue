@@ -4,11 +4,7 @@
             <line-item-status-input :lineItem="lineItem" :editing="editing" @change="$emit('change', $event)"></line-item-status-input>
         </template>
 
-        <template v-else>
-            <span class="status" :class="{[lineItemStatus.color]: true}" v-if="lineItemStatus.color"></span>
-            <span class="status" v-else></span>
-            {{lineItemStatus.name}}
-        </template>
+        <template v-else><span class="status" :class="{[lineItemStatus.color]: lineItemStatus.color}"></span>{{lineItemStatus.name}}</template>
     </div>
 </template>
 

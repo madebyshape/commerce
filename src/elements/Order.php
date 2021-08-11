@@ -2330,7 +2330,7 @@ class Order extends Element
     public function getOrderStatusHtml(): string
     {
         if ($status = $this->getOrderStatus()) {
-            return '<span class="commerceStatusLabel"><span class="status ' . $status->color . '"></span> ' . $status->name . '</span>';
+            return $status->getLabelHtml();
         }
 
         return '';
@@ -2346,19 +2346,19 @@ class Order extends Element
         switch ($this->getPaidStatus()) {
             case self::PAID_STATUS_OVERPAID:
             {
-                return '<span class="commerceStatusLabel"><span class="status blue"></span> ' . Craft::t('commerce', 'Overpaid') . '</span>';
+                return '<span class="commerceStatusLabel"><span class="status blue"></span>' . Craft::t('commerce', 'Overpaid') . '</span>';
             }
             case self::PAID_STATUS_PAID:
             {
-                return '<span class="commerceStatusLabel"><span class="status green"></span> ' . Craft::t('commerce', 'Paid') . '</span>';
+                return '<span class="commerceStatusLabel"><span class="status green"></span>' . Craft::t('commerce', 'Paid') . '</span>';
             }
             case self::PAID_STATUS_PARTIAL:
             {
-                return '<span class="commerceStatusLabel"><span class="status orange"></span> ' . Craft::t('commerce', 'Partial') . '</span>';
+                return '<span class="commerceStatusLabel"><span class="status orange"></span>' . Craft::t('commerce', 'Partial') . '</span>';
             }
             case self::PAID_STATUS_UNPAID:
             {
-                return '<span class="commerceStatusLabel"><span class="status red"></span> ' . Craft::t('commerce', 'Unpaid') . '</span>';
+                return '<span class="commerceStatusLabel"><span class="status red"></span>' . Craft::t('commerce', 'Unpaid') . '</span>';
             }
         }
 
