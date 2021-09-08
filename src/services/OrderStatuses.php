@@ -173,7 +173,7 @@ class OrderStatuses extends Component
 
 
     /**
-     * Get the default order status for a particular order. Defaults to the CP configured default order status.
+     * Get the default order status for a particular order. Defaults to the control-panel-configured default order status.
      *
      * @param Order $order
      * @return OrderStatus|null

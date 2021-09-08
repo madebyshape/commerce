@@ -38,18 +38,23 @@ class LineItemStatuses extends Component
 {
     /**
      * @event DefaultLineItemStatusEvent The event that is triggered when getting a default status for a line item.
-     * You may set [[DefaultLineItemStatusEvent::lineItemStatus]] to a desired LineItemStatus to override the default status set in CP
+     * You may set [[DefaultLineItemStatusEvent::lineItemStatus]] to a desired LineItemStatus to override the default
+     * status set in the control panel.
      *
-     * Plugins can get notified when a default line item status is being fetched
+     * Plugins can get notified when a default line item status is being fetched.
      *
      * ```php
      * use craft\commerce\events\DefaultLineItemStatusEvent;
      * use craft\commerce\services\LineItemStatuses;
      * use yii\base\Event;
      *
-     * Event::on(LineItemStatuses::class, LineItemStatuses::EVENT_DEFAULT_LINE_ITEM_STATUS, function(DefaultLineItemStatusEvent $e) {
-     *     // Do something - perhaps figure out a better default line item status than the one set in CP
-     * });
+     * Event::on(
+     *     LineItemStatuses::class,
+     *     LineItemStatuses::EVENT_DEFAULT_LINE_ITEM_STATUS,
+     *     function(DefaultLineItemStatusEvent $e) {
+     *         // Perhaps determine a better default line item status than the one set in control panel
+     *     }
+     * );
      * ```
      */
     const EVENT_DEFAULT_LINE_ITEM_STATUS = 'defaultLineItemStatus';
@@ -144,7 +149,8 @@ class LineItemStatuses extends Component
     }
 
     /**
-     * Get the default lineItem status for a particular lineItem. Defaults to the CP configured default lineItem status.
+     * Get the default lineItem status for a particular lineItem. Defaults to the default lineItem status as configured
+     * in the control panel.
      *
      * @param LineItem $lineItem
      * @return LineItemStatus|null

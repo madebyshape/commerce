@@ -30,7 +30,7 @@ use Exception;
  * @property User $user the user element associated with this customer
  * @property-read array $activeCarts The active carts this customer has
  * @property-read array $inactiveCarts The Inactive carts this customer has
- * @property-read string $cpEditUrl Link URL to this customer in the CP
+ * @property-read string $cpEditUrl Link URL to this customer in the control panel
  * @author Pixel & Tonic, Inc. <support@pixelandtonic.com>
  * @since 2.0
  */

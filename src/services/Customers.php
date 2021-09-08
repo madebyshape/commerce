@@ -898,7 +898,7 @@ class Customers extends Component
     }
 
     /**
-     * Add customer info to the Edit User page in the CP
+     * Add customer info to the Edit User page in the control panel.
      *
      * @param array $context
      * @return string
